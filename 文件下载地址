@@ -1,0 +1,11 @@
+VScode: https://vscode.download.prss.microsoft.com/dbazure/download/stable/08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/VSCodeUserSetup-x64-1.135.0.exe
+
+VirtualBOX: https://download.virtualbox.org/virtualbox/7.2.16/VirtualBox-7.2.16-174877-Win.exe
+
+Ubuntu镜像: https://old-releases.ubuntu.com/releases/22.04.3/ubuntu-22.04.3-live-server-amd64.iso
+
+龙芯交叉编译工具：https://github.com/loongson/build-tools/releases/download/2023.08.08/CLFS-loongarch64-8.1-x86_64-cross-tools-gcc-glibc.tar.xz
+
+qemu：https://download.qemu.org/qemu-8.2.0.tar.xz
+
+gdb仓库：https://github.com/loongson/binutils-gdb
