@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../libcalc_syntax.a CMakeFiles/calc_syntax.dir/calc_syntax.c.o CMakeFiles/calc_syntax.dir/calc_lex.c.o
+/usr/bin/ranlib ../../../../libcalc_syntax.a
