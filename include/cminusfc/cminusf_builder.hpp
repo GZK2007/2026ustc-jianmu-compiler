@@ -108,6 +108,7 @@ class CminusfBuilder : public ASTVisitor {
     struct {
         // function that is being built
         Function *func = nullptr;
-        // TODO: you should add more fields to store state
+        // 当前是否正在求 var 的左值（地址）
+        bool is_lvalue = false;
     } context;
 };
