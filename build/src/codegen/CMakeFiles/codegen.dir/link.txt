@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../libcodegen.a CMakeFiles/codegen.dir/CodeGen.cpp.o CMakeFiles/codegen.dir/Register.cpp.o
+/usr/bin/ranlib ../../libcodegen.a

@@ -220,6 +220,9 @@ src/cminusfc/CMakeFiles/cminusfc.dir/main.cpp.o: \
  /home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/common/syntax_tree.h \
  /home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/cminusfc/cminusf_builder.hpp \
  /home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/lightir/IRBuilder.hpp \
+ /home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/codegen/CodeGen.hpp \
+ /home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/codegen/ASMInstruction.hpp \
+ /home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/codegen/Register.hpp \
  /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \
  /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \

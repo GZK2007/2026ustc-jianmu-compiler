@@ -90,6 +90,7 @@ src/all: src/logging/all
 src/all: src/cminusfc/all
 src/all: src/lightir/all
 src/all: src/io/all
+src/all: src/codegen/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -99,6 +100,7 @@ src/preinstall: src/logging/preinstall
 src/preinstall: src/cminusfc/preinstall
 src/preinstall: src/lightir/preinstall
 src/preinstall: src/io/preinstall
+src/preinstall: src/codegen/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
@@ -108,6 +110,7 @@ src/clean: src/logging/clean
 src/clean: src/cminusfc/clean
 src/clean: src/lightir/clean
 src/clean: src/io/clean
+src/clean: src/codegen/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -124,6 +127,21 @@ src/cminusfc/preinstall:
 # Recursive "clean" directory target.
 src/cminusfc/clean: src/cminusfc/CMakeFiles/cminusfc.dir/clean
 .PHONY : src/cminusfc/clean
+
+#=============================================================================
+# Directory level rules for directory src/codegen
+
+# Recursive "all" directory target.
+src/codegen/all: src/codegen/CMakeFiles/codegen.dir/all
+.PHONY : src/codegen/all
+
+# Recursive "preinstall" directory target.
+src/codegen/preinstall:
+.PHONY : src/codegen/preinstall
+
+# Recursive "clean" directory target.
+src/codegen/clean: src/codegen/CMakeFiles/codegen.dir/clean
+.PHONY : src/codegen/clean
 
 #=============================================================================
 # Directory level rules for directory src/common
@@ -211,14 +229,17 @@ src/parser/clean: src/parser/CMakeFiles/lexer.dir/clean
 
 # Recursive "all" directory target.
 tests/all: tests/2-ir-gen/warmup/all
+tests/all: tests/3-codegen/warmup/all
 .PHONY : tests/all
 
 # Recursive "preinstall" directory target.
 tests/preinstall: tests/2-ir-gen/warmup/preinstall
+tests/preinstall: tests/3-codegen/warmup/preinstall
 .PHONY : tests/preinstall
 
 # Recursive "clean" directory target.
 tests/clean: tests/2-ir-gen/warmup/clean
+tests/clean: tests/3-codegen/warmup/clean
 .PHONY : tests/clean
 
 #=============================================================================
@@ -262,6 +283,31 @@ tests/2-ir-gen/warmup/calculator/preinstall:
 tests/2-ir-gen/warmup/calculator/clean: tests/2-ir-gen/warmup/calculator/CMakeFiles/calc_syntax.dir/clean
 tests/2-ir-gen/warmup/calculator/clean: tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/clean
 .PHONY : tests/2-ir-gen/warmup/calculator/clean
+
+#=============================================================================
+# Directory level rules for directory tests/3-codegen/warmup
+
+# Recursive "all" directory target.
+tests/3-codegen/warmup/all: tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/all
+tests/3-codegen/warmup/all: tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/all
+tests/3-codegen/warmup/all: tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/all
+tests/3-codegen/warmup/all: tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/all
+tests/3-codegen/warmup/all: tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/all
+tests/3-codegen/warmup/all: tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/all
+.PHONY : tests/3-codegen/warmup/all
+
+# Recursive "preinstall" directory target.
+tests/3-codegen/warmup/preinstall:
+.PHONY : tests/3-codegen/warmup/preinstall
+
+# Recursive "clean" directory target.
+tests/3-codegen/warmup/clean: tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/clean
+tests/3-codegen/warmup/clean: tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/clean
+tests/3-codegen/warmup/clean: tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/clean
+tests/3-codegen/warmup/clean: tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/clean
+tests/3-codegen/warmup/clean: tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/clean
+tests/3-codegen/warmup/clean: tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/clean
+.PHONY : tests/3-codegen/warmup/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/intrinsics_gen.dir
@@ -348,7 +394,7 @@ CMakeFiles/acc_gen.dir/clean:
 src/parser/CMakeFiles/syntax.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/parser/CMakeFiles/syntax.dir/build.make src/parser/CMakeFiles/syntax.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/parser/CMakeFiles/syntax.dir/build.make src/parser/CMakeFiles/syntax.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=44,45,46,47,48 "Built target syntax"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=59,60,61,62,63 "Built target syntax"
 .PHONY : src/parser/CMakeFiles/syntax.dir/all
 
 # Build rule for subdir invocation for target.
@@ -375,7 +421,7 @@ src/parser/CMakeFiles/parser.dir/all: src/parser/CMakeFiles/syntax.dir/all
 src/parser/CMakeFiles/parser.dir/all: src/common/CMakeFiles/common.dir/all
 	$(MAKE) $(MAKESILENT) -f src/parser/CMakeFiles/parser.dir/build.make src/parser/CMakeFiles/parser.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/parser/CMakeFiles/parser.dir/build.make src/parser/CMakeFiles/parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=34,35 "Built target parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=37,38 "Built target parser"
 .PHONY : src/parser/CMakeFiles/parser.dir/all
 
 # Build rule for subdir invocation for target.
@@ -402,7 +448,7 @@ src/parser/CMakeFiles/lexer.dir/all: src/parser/CMakeFiles/syntax.dir/all
 src/parser/CMakeFiles/lexer.dir/all: src/common/CMakeFiles/common.dir/all
 	$(MAKE) $(MAKESILENT) -f src/parser/CMakeFiles/lexer.dir/build.make src/parser/CMakeFiles/lexer.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/parser/CMakeFiles/lexer.dir/build.make src/parser/CMakeFiles/lexer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=32,33 "Built target lexer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=35,36 "Built target lexer"
 .PHONY : src/parser/CMakeFiles/lexer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -428,7 +474,7 @@ src/parser/CMakeFiles/lexer.dir/clean:
 src/common/CMakeFiles/common.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=26,27,28,29 "Built target common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=29,30,31,32 "Built target common"
 .PHONY : src/common/CMakeFiles/common.dir/all
 
 # Build rule for subdir invocation for target.
@@ -455,7 +501,7 @@ src/logging/CMakeFiles/test_ast.dir/all: src/parser/CMakeFiles/syntax.dir/all
 src/logging/CMakeFiles/test_ast.dir/all: src/common/CMakeFiles/common.dir/all
 	$(MAKE) $(MAKESILENT) -f src/logging/CMakeFiles/test_ast.dir/build.make src/logging/CMakeFiles/test_ast.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/logging/CMakeFiles/test_ast.dir/build.make src/logging/CMakeFiles/test_ast.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=49,50 "Built target test_ast"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=64,65 "Built target test_ast"
 .PHONY : src/logging/CMakeFiles/test_ast.dir/all
 
 # Build rule for subdir invocation for target.
@@ -481,7 +527,7 @@ src/logging/CMakeFiles/test_ast.dir/clean:
 src/logging/CMakeFiles/test_logging.dir/all: src/common/CMakeFiles/common.dir/all
 	$(MAKE) $(MAKESILENT) -f src/logging/CMakeFiles/test_logging.dir/build.make src/logging/CMakeFiles/test_logging.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/logging/CMakeFiles/test_logging.dir/build.make src/logging/CMakeFiles/test_logging.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=51,52 "Built target test_logging"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=66,67 "Built target test_logging"
 .PHONY : src/logging/CMakeFiles/test_logging.dir/all
 
 # Build rule for subdir invocation for target.
@@ -507,6 +553,7 @@ src/logging/CMakeFiles/test_logging.dir/clean:
 src/cminusfc/CMakeFiles/cminusfc.dir/all: src/parser/CMakeFiles/syntax.dir/all
 src/cminusfc/CMakeFiles/cminusfc.dir/all: src/common/CMakeFiles/common.dir/all
 src/cminusfc/CMakeFiles/cminusfc.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
+src/cminusfc/CMakeFiles/cminusfc.dir/all: src/codegen/CMakeFiles/codegen.dir/all
 	$(MAKE) $(MAKESILENT) -f src/cminusfc/CMakeFiles/cminusfc.dir/build.make src/cminusfc/CMakeFiles/cminusfc.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/cminusfc/CMakeFiles/cminusfc.dir/build.make src/cminusfc/CMakeFiles/cminusfc.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=23,24,25 "Built target cminusfc"
@@ -514,7 +561,7 @@ src/cminusfc/CMakeFiles/cminusfc.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
 
 # Build rule for subdir invocation for target.
 src/cminusfc/CMakeFiles/cminusfc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/cminusfc/CMakeFiles/cminusfc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 0
 .PHONY : src/cminusfc/CMakeFiles/cminusfc.dir/rule
@@ -581,13 +628,40 @@ src/io/CMakeFiles/cminus_io.dir/clean:
 .PHONY : src/io/CMakeFiles/cminus_io.dir/clean
 
 #=============================================================================
+# Target rules for target src/codegen/CMakeFiles/codegen.dir
+
+# All Build rule for target.
+src/codegen/CMakeFiles/codegen.dir/all: src/common/CMakeFiles/common.dir/all
+src/codegen/CMakeFiles/codegen.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f src/codegen/CMakeFiles/codegen.dir/build.make src/codegen/CMakeFiles/codegen.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/codegen/CMakeFiles/codegen.dir/build.make src/codegen/CMakeFiles/codegen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=26,27,28 "Built target codegen"
+.PHONY : src/codegen/CMakeFiles/codegen.dir/all
+
+# Build rule for subdir invocation for target.
+src/codegen/CMakeFiles/codegen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 18
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/codegen/CMakeFiles/codegen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 0
+.PHONY : src/codegen/CMakeFiles/codegen.dir/rule
+
+# Convenience name for target.
+codegen: src/codegen/CMakeFiles/codegen.dir/rule
+.PHONY : codegen
+
+# clean rule for target.
+src/codegen/CMakeFiles/codegen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/codegen/CMakeFiles/codegen.dir/build.make src/codegen/CMakeFiles/codegen.dir/clean
+.PHONY : src/codegen/CMakeFiles/codegen.dir/clean
+
+#=============================================================================
 # Target rules for target tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir
 
 # All Build rule for target.
 tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=30,31 "Built target gcd_array_generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=33,34 "Built target gcd_array_generator"
 .PHONY : tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -613,7 +687,7 @@ tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir/clean:
 tests/2-ir-gen/warmup/CMakeFiles/stu_assign_generator.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/stu_assign_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/stu_assign_generator.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/stu_assign_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/stu_assign_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=36,37 "Built target stu_assign_generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=41,42 "Built target stu_assign_generator"
 .PHONY : tests/2-ir-gen/warmup/CMakeFiles/stu_assign_generator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -639,7 +713,7 @@ tests/2-ir-gen/warmup/CMakeFiles/stu_assign_generator.dir/clean:
 tests/2-ir-gen/warmup/CMakeFiles/stu_fun_generator.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/stu_fun_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/stu_fun_generator.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/stu_fun_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/stu_fun_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=38,39 "Built target stu_fun_generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=47,48 "Built target stu_fun_generator"
 .PHONY : tests/2-ir-gen/warmup/CMakeFiles/stu_fun_generator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -665,7 +739,7 @@ tests/2-ir-gen/warmup/CMakeFiles/stu_fun_generator.dir/clean:
 tests/2-ir-gen/warmup/CMakeFiles/stu_if_generator.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/stu_if_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/stu_if_generator.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/stu_if_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/stu_if_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=40,41 "Built target stu_if_generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=55,56 "Built target stu_if_generator"
 .PHONY : tests/2-ir-gen/warmup/CMakeFiles/stu_if_generator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -691,7 +765,7 @@ tests/2-ir-gen/warmup/CMakeFiles/stu_if_generator.dir/clean:
 tests/2-ir-gen/warmup/CMakeFiles/stu_while_generator.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/stu_while_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/stu_while_generator.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/CMakeFiles/stu_while_generator.dir/build.make tests/2-ir-gen/warmup/CMakeFiles/stu_while_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=42,43 "Built target stu_while_generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=57,58 "Built target stu_while_generator"
 .PHONY : tests/2-ir-gen/warmup/CMakeFiles/stu_while_generator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -763,6 +837,174 @@ calc: tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/rule
 tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/build.make tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/clean
 .PHONY : tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/clean
+
+#=============================================================================
+# Target rules for target tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir
+
+# All Build rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/all: src/common/CMakeFiles/common.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/all: src/codegen/CMakeFiles/codegen.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=39,40 "Built target stu_assign_codegen"
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/all
+
+# Build rule for subdir invocation for target.
+tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 0
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/rule
+
+# Convenience name for target.
+stu_assign_codegen: tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/rule
+.PHONY : stu_assign_codegen
+
+# clean rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/clean
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/clean
+
+#=============================================================================
+# Target rules for target tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir
+
+# All Build rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/all: src/common/CMakeFiles/common.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/all: src/codegen/CMakeFiles/codegen.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=49,50 "Built target stu_function_codegen"
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/all
+
+# Build rule for subdir invocation for target.
+tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 0
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/rule
+
+# Convenience name for target.
+stu_function_codegen: tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/rule
+.PHONY : stu_function_codegen
+
+# clean rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/clean
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/clean
+
+#=============================================================================
+# Target rules for target tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir
+
+# All Build rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/all: src/common/CMakeFiles/common.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/all: src/codegen/CMakeFiles/codegen.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=53,54 "Built target stu_icmp_codegen"
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/all
+
+# Build rule for subdir invocation for target.
+tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 0
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/rule
+
+# Convenience name for target.
+stu_icmp_codegen: tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/rule
+.PHONY : stu_icmp_codegen
+
+# clean rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/clean
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/clean
+
+#=============================================================================
+# Target rules for target tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir
+
+# All Build rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/all: src/common/CMakeFiles/common.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/all: src/codegen/CMakeFiles/codegen.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=43,44 "Built target stu_fcmp_codegen"
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/all
+
+# Build rule for subdir invocation for target.
+tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 0
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/rule
+
+# Convenience name for target.
+stu_fcmp_codegen: tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/rule
+.PHONY : stu_fcmp_codegen
+
+# clean rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/clean
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/clean
+
+#=============================================================================
+# Target rules for target tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir
+
+# All Build rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/all: src/common/CMakeFiles/common.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/all: src/codegen/CMakeFiles/codegen.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=45,46 "Built target stu_float_codegen"
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/all
+
+# Build rule for subdir invocation for target.
+tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 0
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/rule
+
+# Convenience name for target.
+stu_float_codegen: tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/rule
+.PHONY : stu_float_codegen
+
+# clean rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/clean
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/clean
+
+#=============================================================================
+# Target rules for target tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir
+
+# All Build rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/all: src/common/CMakeFiles/common.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/all: src/lightir/CMakeFiles/IR_lib.dir/all
+tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/all: src/codegen/CMakeFiles/codegen.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=51,52 "Built target stu_global_codegen"
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/all
+
+# Build rule for subdir invocation for target.
+tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles 0
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/rule
+
+# Convenience name for target.
+stu_global_codegen: tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/rule
+.PHONY : stu_global_codegen
+
+# clean rule for target.
+tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/clean
+.PHONY : tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

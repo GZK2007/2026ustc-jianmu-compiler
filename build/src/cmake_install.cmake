@@ -50,6 +50,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/cminusfc/cmake_install.cmake")
   include("/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/lightir/cmake_install.cmake")
   include("/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/io/cmake_install.cmake")
+  include("/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/codegen/cmake_install.cmake")
 
 endif()
 

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/cminusfc -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/common -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/lightir -I/usr/lib/llvm-14/include -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build
+CXX_INCLUDES = -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/cminusfc -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/common -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/lightir -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/include/codegen -I/usr/lib/llvm-14/include -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler -I/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build
 
 CXX_FLAGS =  -O0 -Wall -g2 -ggdb   -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
 

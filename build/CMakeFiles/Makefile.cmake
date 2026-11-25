@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
   "../src/CMakeLists.txt"
   "../src/cminusfc/CMakeLists.txt"
+  "../src/codegen/CMakeLists.txt"
   "../src/common/CMakeLists.txt"
   "../src/io/CMakeLists.txt"
   "../src/lightir/CMakeLists.txt"
@@ -20,6 +21,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/parser/CMakeLists.txt"
   "../tests/2-ir-gen/warmup/CMakeLists.txt"
   "../tests/2-ir-gen/warmup/calculator/CMakeLists.txt"
+  "../tests/3-codegen/warmup/CMakeLists.txt"
   "../tests/CMakeLists.txt"
   "/usr/lib/llvm-14/cmake/FindFFI.cmake"
   "/usr/lib/llvm-14/cmake/FindTerminfo.cmake"
@@ -73,9 +75,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/cminusfc/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/lightir/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/io/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/codegen/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/2-ir-gen/warmup/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/2-ir-gen/warmup/calculator/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/3-codegen/warmup/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -92,6 +96,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/cminusfc/CMakeFiles/cminusfc.dir/DependInfo.cmake"
   "src/lightir/CMakeFiles/IR_lib.dir/DependInfo.cmake"
   "src/io/CMakeFiles/cminus_io.dir/DependInfo.cmake"
+  "src/codegen/CMakeFiles/codegen.dir/DependInfo.cmake"
   "tests/2-ir-gen/warmup/CMakeFiles/gcd_array_generator.dir/DependInfo.cmake"
   "tests/2-ir-gen/warmup/CMakeFiles/stu_assign_generator.dir/DependInfo.cmake"
   "tests/2-ir-gen/warmup/CMakeFiles/stu_fun_generator.dir/DependInfo.cmake"
@@ -99,4 +104,10 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/2-ir-gen/warmup/CMakeFiles/stu_while_generator.dir/DependInfo.cmake"
   "tests/2-ir-gen/warmup/calculator/CMakeFiles/calc_syntax.dir/DependInfo.cmake"
   "tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/DependInfo.cmake"
+  "tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/DependInfo.cmake"
+  "tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/DependInfo.cmake"
+  "tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/DependInfo.cmake"
+  "tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/DependInfo.cmake"
+  "tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/DependInfo.cmake"
+  "tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/DependInfo.cmake"
   )

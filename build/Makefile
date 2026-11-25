@@ -318,6 +318,19 @@ cminus_io/fast:
 .PHONY : cminus_io/fast
 
 #=============================================================================
+# Target rules for targets named codegen
+
+# Build rule for target.
+codegen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
+.PHONY : codegen
+
+# fast build rule for target.
+codegen/fast:
+	$(MAKE) $(MAKESILENT) -f src/codegen/CMakeFiles/codegen.dir/build.make src/codegen/CMakeFiles/codegen.dir/build
+.PHONY : codegen/fast
+
+#=============================================================================
 # Target rules for targets named gcd_array_generator
 
 # Build rule for target.
@@ -408,6 +421,84 @@ calc/fast:
 	$(MAKE) $(MAKESILENT) -f tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/build.make tests/2-ir-gen/warmup/calculator/CMakeFiles/calc.dir/build
 .PHONY : calc/fast
 
+#=============================================================================
+# Target rules for targets named stu_assign_codegen
+
+# Build rule for target.
+stu_assign_codegen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stu_assign_codegen
+.PHONY : stu_assign_codegen
+
+# fast build rule for target.
+stu_assign_codegen/fast:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_assign_codegen.dir/build
+.PHONY : stu_assign_codegen/fast
+
+#=============================================================================
+# Target rules for targets named stu_function_codegen
+
+# Build rule for target.
+stu_function_codegen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stu_function_codegen
+.PHONY : stu_function_codegen
+
+# fast build rule for target.
+stu_function_codegen/fast:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_function_codegen.dir/build
+.PHONY : stu_function_codegen/fast
+
+#=============================================================================
+# Target rules for targets named stu_icmp_codegen
+
+# Build rule for target.
+stu_icmp_codegen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stu_icmp_codegen
+.PHONY : stu_icmp_codegen
+
+# fast build rule for target.
+stu_icmp_codegen/fast:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_icmp_codegen.dir/build
+.PHONY : stu_icmp_codegen/fast
+
+#=============================================================================
+# Target rules for targets named stu_fcmp_codegen
+
+# Build rule for target.
+stu_fcmp_codegen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stu_fcmp_codegen
+.PHONY : stu_fcmp_codegen
+
+# fast build rule for target.
+stu_fcmp_codegen/fast:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_fcmp_codegen.dir/build
+.PHONY : stu_fcmp_codegen/fast
+
+#=============================================================================
+# Target rules for targets named stu_float_codegen
+
+# Build rule for target.
+stu_float_codegen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stu_float_codegen
+.PHONY : stu_float_codegen
+
+# fast build rule for target.
+stu_float_codegen/fast:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_float_codegen.dir/build
+.PHONY : stu_float_codegen/fast
+
+#=============================================================================
+# Target rules for targets named stu_global_codegen
+
+# Build rule for target.
+stu_global_codegen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stu_global_codegen
+.PHONY : stu_global_codegen
+
+# fast build rule for target.
+stu_global_codegen/fast:
+	$(MAKE) $(MAKESILENT) -f tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/build.make tests/3-codegen/warmup/CMakeFiles/stu_global_codegen.dir/build
+.PHONY : stu_global_codegen/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -428,12 +519,19 @@ help:
 	@echo "... calc_syntax"
 	@echo "... cminus_io"
 	@echo "... cminusfc"
+	@echo "... codegen"
 	@echo "... common"
 	@echo "... gcd_array_generator"
 	@echo "... lexer"
 	@echo "... parser"
+	@echo "... stu_assign_codegen"
 	@echo "... stu_assign_generator"
+	@echo "... stu_fcmp_codegen"
+	@echo "... stu_float_codegen"
 	@echo "... stu_fun_generator"
+	@echo "... stu_function_codegen"
+	@echo "... stu_global_codegen"
+	@echo "... stu_icmp_codegen"
 	@echo "... stu_if_generator"
 	@echo "... stu_while_generator"
 	@echo "... syntax"

@@ -110,11 +110,14 @@ cminusfc: src/cminusfc/CMakeFiles/cminusfc.dir/cminusf_builder.cpp.o
 cminusfc: src/cminusfc/CMakeFiles/cminusfc.dir/build.make
 cminusfc: libIR_lib.a
 cminusfc: libcommon.a
+cminusfc: libcodegen.a
 cminusfc: libsyntax.a
+cminusfc: libIR_lib.a
 cminusfc: /usr/lib/llvm-14/lib/libLLVMSupport.a
 cminusfc: /usr/lib/x86_64-linux-gnu/libz.so.1
 cminusfc: /usr/lib/x86_64-linux-gnu/libtinfo.so
 cminusfc: /usr/lib/llvm-14/lib/libLLVMDemangle.a
+cminusfc: libcommon.a
 cminusfc: src/cminusfc/CMakeFiles/cminusfc.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../cminusfc"
 	cd /home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/cminusfc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cminusfc.dir/link.txt --verbose=$(VERBOSE)

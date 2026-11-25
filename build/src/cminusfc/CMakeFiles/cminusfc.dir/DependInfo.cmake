@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/lightir/CMakeFiles/IR_lib.dir/DependInfo.cmake"
   "/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/common/CMakeFiles/common.dir/DependInfo.cmake"
+  "/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/codegen/CMakeFiles/codegen.dir/DependInfo.cmake"
   "/home/guozhikang/Lab0/2026ustc-jianmu-compiler/build/src/parser/CMakeFiles/syntax.dir/DependInfo.cmake"
   )
 
